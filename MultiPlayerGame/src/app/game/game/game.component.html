@@ -1,0 +1,18 @@
+<div>
+    <p>game works!</p>
+    <ul>
+        <li *ngFor="let item of items">
+            {{ item.payload.doc.data().Move }}
+        </li>
+    </ul>
+    <div *ngIf="!userNameSubmitted">
+        <label>user name:</label>
+        <input type="text" [(ngModel)]="inputValue" #ctrl="ngModel" />
+        <button (click)="onSubmit()">submit</button>
+    </div>
+    <div *ngIf="userNameSubmitted">
+        <label>{{inputValue}}</label>
+    </div>
+    <button (click)="onMove()">Move</button>
+    <button (click)="onRefresh()">Refresh</button>
+</div>
